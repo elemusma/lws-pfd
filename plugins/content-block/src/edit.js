@@ -13,7 +13,7 @@ import { __ } from '@wordpress/i18n';
  */
 import { InspectorControls, useBlockProps, InnerBlocks, MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { Button, PanelBody, __experimentalInputControl as InputControl,TextControl, } from '@wordpress/components';
-import { useState, useEffect } from '@wordpress/element';
+import { useState, useEffect, RawHTML } from '@wordpress/element';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -185,6 +185,8 @@ export default function Edit({ attributes, setAttributes }) {
 			{section_image && (
 				<img src={section_image} alt={section_image_alt || 'Electrical Engineering Expert Witness'} />
 			)}
+			{/* Output raw HTML code entered in textarea */}
+			{section_block && <RawHTML>{ section_block }</RawHTML>}
 				{/* {console.log(section_image)} */}
 			<InnerBlocks />
 			</section>

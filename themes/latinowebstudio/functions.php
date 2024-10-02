@@ -1,6 +1,6 @@
 <?php
 
-function discovery_engineering_stylesheets() {
+function prodigy_futbol_development_stylesheets() {
 wp_enqueue_style('style', get_stylesheet_uri() );
 
 wp_enqueue_style('layout', get_theme_file_uri('/css/sections/layout.css'));
@@ -41,12 +41,12 @@ wp_enqueue_style('gutenberg-custom', get_theme_file_uri('/css/sections/gutenberg
 // wp_enqueue_style('social-icons', get_theme_file_uri('/css/sections/social-icons.css'));
 
 }
-add_action('wp_enqueue_scripts', 'discovery_engineering_stylesheets');
+add_action('wp_enqueue_scripts', 'prodigy_futbol_development_stylesheets');
 
 
 
 // for footer
-function discovery_engineering_stylesheets_footer() {
+function prodigy_futbol_development_stylesheets_footer() {
 	
 wp_enqueue_style('footer', get_theme_file_uri('/css/sections/footer.css'));
 wp_enqueue_style('nav-mobile', get_theme_file_uri('/css/sections/nav-mobile.css'));
@@ -89,7 +89,7 @@ if(is_single()){
 	}
 }
 
-add_action('get_footer', 'discovery_engineering_stylesheets_footer');
+add_action('get_footer', 'prodigy_futbol_development_stylesheets_footer');
 
 // loads enqueued javascript files deferred
 function mind_defer_scripts( $tag, $handle, $src ) {
@@ -113,7 +113,7 @@ if ( in_array( $handle, $defer ) ) {
 } 
 add_filter( 'script_loader_tag', 'mind_defer_scripts', 10, 3 );
 
-function discovery_engineering_menus() {
+function prodigy_futbol_development_menus() {
 register_nav_menus( array(
 'primary' => __( 'Primary' )));
 register_nav_menus( array(
@@ -123,7 +123,7 @@ add_theme_support('title-tag');
 add_theme_support('post-thumbnails');
 }
 
-add_action('after_setup_theme', 'discovery_engineering_menus');
+add_action('after_setup_theme', 'prodigy_futbol_development_menus');
 
 if( function_exists('acf_add_options_page') ) {
 

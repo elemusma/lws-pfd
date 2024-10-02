@@ -1,4 +1,4 @@
-/* @keyframes rotate-infinite {
+@keyframes rotate-infinite {
 from {
     transform: rotate(0deg);
 }
@@ -16,10 +16,18 @@ to {
 }
 }
 
-.txt-logo {
-animation: rotate-infinite 35s linear infinite;
+.logo-text {
+animation: rotate-infinite 45s linear infinite;
 transform-origin:center;
-} */
+}
+
+#logoMain path {
+    fill: white;
+    fill: var(--accent-secondary);
+}
+#logoMain svg {
+    overflow: visible !important;
+}
 
 @keyframes navAnimation {
     from {

@@ -63,13 +63,20 @@ export default function Edit( { attributes, setAttributes } ) {
 		col_style,
 		col_class,
 		col_id,
+		col_content,
+		checkmarks_style,
+		checkmarks_class,
+		checkmarks_id,
 		checkmarks,
+		col_bottom_style,
+		col_bottom_class,
+		col_bottom_id,
+		col_bottom_content,
 	} = attributes;
 
 	const [ value, setValue ] = useState( '' );
 
-	const checkmarkIcon = `const checkmark = '
-<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1170.21 1145.48">
+	const checkmarkIcon = `<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1170.21 1145.48">
   <defs>
     <style>
       .cls-1 {
@@ -83,7 +90,7 @@ export default function Edit( { attributes, setAttributes } ) {
       <path class="cls-1" d="M75.64,533.32c30.18.6,57.09,7.34,83.63,15.82,48.96,15.65,95.74,36.58,141.81,59.13,26.01,12.73,51.73,26.07,77.49,39.31,3.19,1.64,4.98,1.67,7.51-1.26,36.59-42.31,72.96-84.82,110.12-126.62,33.07-37.21,66.82-73.81,100.66-110.31,55.72-60.08,112.95-118.71,171.89-175.63,56.07-54.15,113.52-106.78,175.68-154,30.79-23.4,62.49-45.46,97.6-62.06C1063.72,7.44,1086.12-.47,1110.55.02c13.35.27,25.99,3.6,37.47,10.72,19.8,12.26,27.1,33.62,18.85,55.42-5.06,13.36-13.75,24.39-23.53,34.41-18.37,18.82-37.31,37.09-55.91,55.68-41.21,41.2-83.04,81.8-123.36,123.85-55.12,57.5-105.64,119.01-153.58,182.62-85.27,113.15-159.78,233.08-225.51,358.53-50.88,97.11-96.21,196.76-136.56,298.68-5.15,13.02-13.1,22.48-27.31,24.96-15.31,2.67-28.22-3.75-36.12-17.44-14.48-25.09-28.7-50.33-43.35-75.31-45.67-77.88-93.52-154.34-147.95-226.51-47.85-63.45-101.14-121.96-159.28-176.1-6.58-6.13-12.82-12.68-19.8-18.3-13.8-11.1-16.5-25.52-13.52-41.78,5.67-30.98,28.25-51.51,60.21-54.93,5.45-.58,10.93-.91,14.35-1.19Z"/>
     </g>
   </g>
-</svg>'`;
+</svg>`;
 
 	const addCheckmark = () => {
 		setAttributes( {
@@ -265,7 +272,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 				
 				<PanelBody
-					title={ __( 'Checkmark Settings' ) }
+					title={ __( 'Col Top Setting' ) }
 					initialOpen={ false }
 				>
 					<InputControl
@@ -289,14 +296,77 @@ export default function Edit( { attributes, setAttributes } ) {
 							setAttributes( { col_id: nextValue } )
 						}
 					/>
+				</PanelBody>
+				<PanelBody
+					title={ __( 'Checkmark Settings' ) }
+					initialOpen={ false }
+				>
+					<InputControl
+						label="Checkmarks Style"
+						value={ checkmarks_style }
+						onChange={ ( nextValue ) =>
+							setAttributes( { checkmarks_style: nextValue } )
+						}
+					/>
+					<InputControl
+						label="Checkmarks Class"
+						value={ checkmarks_class }
+						onChange={ ( nextValue ) =>
+							setAttributes( { checkmarks_class: nextValue } )
+						}
+					/>
+					<InputControl
+						label="Checkmarks ID"
+						value={ checkmarks_id }
+						onChange={ ( nextValue ) =>
+							setAttributes( { checkmarks_id: nextValue } )
+						}
+					/>
 					<button onClick={ () => addCheckmark() }>
 						Add New Checkmark
 					</button>
+				</PanelBody>
+				<PanelBody
+					title={ __( 'Col Bottom Settings' ) }
+					initialOpen={ false }
+				>
+					<InputControl
+						label="Col Style"
+						value={ col_bottom_style }
+						onChange={ ( nextValue ) =>
+							setAttributes( { col_bottom_style: nextValue } )
+						}
+					/>
+					<InputControl
+						label="Col Class"
+						value={ col_bottom_class }
+						onChange={ ( nextValue ) =>
+							setAttributes( { col_bottom_class: nextValue } )
+						}
+					/>
+					<InputControl
+						label="Col ID"
+						value={ col_bottom_id }
+						onChange={ ( nextValue ) =>
+							setAttributes( { col_bottom_id: nextValue } )
+						}
+					/>
 				</PanelBody>
 			</InspectorControls>
 			<section { ...useBlockProps() }>
 				<img src={ section_image } alt="" />
 				{ console.log( section_image ) }
+
+				<p>Col Top Content</p>
+				<textarea
+					id="colTopContent"
+					value={col_content}
+					onChange={ ( event ) =>
+							setAttributes( { col_content: event.target.value } )
+					}
+					placeholder={__('here goes text')}
+					style={{ width: '100%', height: '100px' }}
+				/>
 				<div className="column-wrapper">
 				{ checkmarks.map((checkmark, index) => {
     return (
@@ -457,6 +527,16 @@ export default function Edit( { attributes, setAttributes } ) {
     );
 })}
 
+<p>Col Bottom Content</p>
+<textarea
+	id="colBottomContent"
+	value={col_bottom_content}
+	onChange={ ( event ) =>
+			setAttributes( { col_bottom_content: event.target.value } )
+	}
+	placeholder={__('here goes text')}
+	style={{ width: '100%', height: '100px' }}
+/>
 				</div>
 			</section>
 		</>

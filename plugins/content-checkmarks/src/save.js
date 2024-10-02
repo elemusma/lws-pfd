@@ -53,6 +53,13 @@ export default function save( { attributes } ) {
 						style={ attributes.col_style }
 						id={ attributes.col_id }
 						>
+					<RawHTML>{attributes.col_content}</RawHTML>
+					</div>
+						<div 
+						className={ `${attributes.checkmarks_class}` }
+						style={ attributes.checkmarks_style }
+						id={ attributes.checkmarks_id }
+						>
 
 {
   attributes.checkmarks.map((checkmark, index) => {
@@ -61,7 +68,7 @@ export default function save( { attributes } ) {
           
           <div className={`d-flex`} style={{margin:'30px 0px'}}>
 
-            <div className={`d-flex align-items-center justify-content-center`} style={{minWidth:'10px',height:'10px',background:'var(--accent-primary)',borderRadius:'50%',padding:'7px'}}>
+            <div className={`d-flex align-items-center justify-content-center`} style={{height:'20px',width:'27px',borderRadius:'50%',paddingTop:'5px'}}>
 			<RawHTML>
 				{checkmark.content}
 			</RawHTML>
@@ -72,9 +79,17 @@ export default function save( { attributes } ) {
     );
   })
 }
+</div> {/* end of checkmarks */}
 
-
+<div 
+	className={ `${attributes.col_bottom_class}` }
+	style={ attributes.col_bottom_style }
+	id={ attributes.col_bottom_id }
+	>
+<RawHTML>{attributes.col_bottom_content}</RawHTML>
 </div>
+
+
 				</div>
 				</div>
 			</section>

@@ -20,6 +20,10 @@ echo codeBody();
 echo '<div class="blank-space" style=""></div>';
 echo '<header class="header-nav box-shadow bg-accent-secondary w-100" style="top:0;left:0;z-index:10;">';
 
+echo wp_get_attachment_image(9, 'full','',array(
+    'class'=>'position-absolute w-100 h-100',
+    'style'=>'top:0;left:0;object-fit:cover;object-position:bottom;mix-blend-mode:color-burn;'
+));
 
 // echo '<div class="bg-white d-md-none d-block text-center" style="padding:0px 15px;">';
 // echo '<div class="container">';
@@ -65,14 +69,14 @@ echo '<header class="header-nav box-shadow bg-accent-secondary w-100" style="top
 
 // echo '</div>'; // outer
 
-echo '<div class="nav" style="padding-top:10px;">';
+echo '<div class="nav" style="padding-top:10px;padding-bottom:10px;">';
 echo '<div class="container">';
 echo '<div class="row justify-content-between">';
 
-echo '<div class="col-lg-3 col-md-4 col-6 text-center">';
+echo '<div class="col-lg-2 col-md-4 col-6 text-center">';
 
-echo '<a href="' . home_url() . '" title="Homepage link for Mark McFarland, P.E. - Expert Witness & Forensic Engineering">';
-echo '<div class="" id="logoMain" style="width:75%;transition:all .75s ease-in-out;">';
+echo '<a href="' . home_url() . '" title="Homepage link for ' . get_bloginfo('name') . ' specializing in ' . get_bloginfo('description') . '">';
+echo '<div class="white" id="logoMain" style="width:50%;transition:all .75s ease-in-out;background:white;width:75px;height:75px;border-radius:50%;padding:5px;background:url(/wp-content/uploads/2024/10/Bg-Texture-02.jpg);background-size:cover;">';
 echo '<div style="pointer-events:none;">';
 echo logoSVG();
 echo '</div>';
@@ -140,9 +144,9 @@ echo '<div class="col-lg-3 col-md-8 justify-content-end col-6 text-white d-md-fl
 
 // echo '<div class="d-flex align-items-center justify-content-end">';
 
-echo do_shortcode('[button href="tel:+1' . globalPhone() . '" class="" title="phone number link for Mark McFarland, P.E. - Expert Witness & Forensic Engineering" style="font-size:12px;" class="d-md-block d-none"]Speak with an Expert[/button]');
+echo do_shortcode('[button href="tel:+1' . globalPhone() . '" title="phone number link for ' . get_bloginfo('name') . ' specializing in ' . get_bloginfo('description') . '" style="font-size:12px;" class=""]Book a Session[/button]');
 
-// echo '<a href="tel:+1' . globalPhone() . '" class="text-white mobile-hidden" title="phone number for Mark McFarland, P.E. - Expert Witness & Forensic Engineering" style="padding:10px 0px;">' . globalPhone() . '</a>';
+// echo '<a href="tel:+1' . globalPhone() . '" class="text-white mobile-hidden" title="phone number for ' . get_bloginfo('name') . ' specializing in ' . get_bloginfo('description') . '" style="padding:10px 0px;">' . globalPhone() . '</a>';
 // echo '<div class="d-inline-block mobile-hidden" style="width:28px;height:28px;padding-left:10px;">';
 // echo '<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 267 267">
 //   <defs>

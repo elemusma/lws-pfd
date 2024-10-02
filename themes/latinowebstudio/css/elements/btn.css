@@ -1,5 +1,5 @@
 .btn-main, .btn-main a {
-    background: var(--accent-primary);
+    background: var(--accent-primary-lighter);
     padding: 15px 35px;
     transition: all .25s ease-in-out;
     display: inline-block;
@@ -8,15 +8,21 @@
     text-shadow:none;
     border-radius: 8px;
     text-transform: uppercase;
-    border:1px solid var(--accent-primary);
+    border:1px solid var(--accent-primary-lighter);
     font-family: 'poppinssemibold';
     margin: 10px;
     cursor:pointer;
+    background-image: url('/wp-content/uploads/2024/10/Bg-Texture-02.jpg');
+    background-size:cover;
+    background-blend-mode: multiply;
 }
 
 .btn-main:hover {
     background: var(--accent-primary-hover);
     border-color:var(--accent-primary-hover);
+    background-image: url('/wp-content/uploads/2024/10/Bg-Texture-02.jpg');
+    background-size:cover;
+    background-blend-mode: multiply;
     color:white !important;
     text-decoration: none;
 }

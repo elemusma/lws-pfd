@@ -22,7 +22,7 @@ export default function save( { attributes } ) {
 	return (
 		<div { ...blockProps }>
 			<section
-				className={ `position-relative ${ attributes.section_class }` }
+				className={ `${ attributes.section_class }` }
 				style={ `${ attributes.section_style }` }
 				id={ attributes.section_id }
 			>

@@ -70,8 +70,8 @@ export default function Edit( { attributes, setAttributes } ) {
 			features: [
 				...features,
 				{
-					col_class: '',
-					col_style: '',
+					col_class: 'col-lg-4 col-md-6 col-12',
+					col_style: 'background:var(--accent-primary-lighter);',
 					col_id: '',
 					col_inner_class: 'd-flex align-items-center justify-content-md-center',
 					col_inner_style: '',
@@ -441,13 +441,18 @@ export default function Edit( { attributes, setAttributes } ) {
                 onClick={() => {
                     const newFeatures = [...features];
                     const newColumn = {
-                        col_class: '',
-                        col_style: '',
-                        col_id: '',
-                        data_aos: 'fade-up',
-                        data_aos_delay: '',
-                        title: 'new column',
-                        content: 'new column content',
+                        col_class: 'col-lg-4 col-md-6 col-12',
+					col_style: 'background:var(--accent-primary-lighter);',
+					col_id: '',
+					col_inner_class: 'd-flex align-items-center justify-content-md-center',
+					col_inner_style: '',
+					data_aos: 'fade-up',
+					data_aos_delay: '',
+					title: '',
+					title_class: 'bold',
+					title_style: '',
+					content: '',
+					code_block: ''
                     };
                     newFeatures.splice(index, 0, newColumn); // Insert the new column at the current index
                     setAttributes({ features: newFeatures });

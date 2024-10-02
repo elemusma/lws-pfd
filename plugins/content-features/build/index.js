@@ -82,8 +82,8 @@ function Edit({
   const addFeature = () => {
     setAttributes({
       features: [...features, {
-        col_class: '',
-        col_style: '',
+        col_class: 'col-lg-4 col-md-6 col-12',
+        col_style: 'background:var(--accent-primary-lighter);',
         col_id: '',
         col_inner_class: 'd-flex align-items-center justify-content-md-center',
         col_inner_style: '',
@@ -503,13 +503,18 @@ function Edit({
               onClick: () => {
                 const newFeatures = [...features];
                 const newColumn = {
-                  col_class: '',
-                  col_style: '',
+                  col_class: 'col-lg-4 col-md-6 col-12',
+                  col_style: 'background:var(--accent-primary-lighter);',
                   col_id: '',
+                  col_inner_class: 'd-flex align-items-center justify-content-md-center',
+                  col_inner_style: '',
                   data_aos: 'fade-up',
                   data_aos_delay: '',
-                  title: 'new column',
-                  content: 'new column content'
+                  title: '',
+                  title_class: 'bold',
+                  title_style: '',
+                  content: '',
+                  code_block: ''
                 };
                 newFeatures.splice(index, 0, newColumn); // Insert the new column at the current index
                 setAttributes({
@@ -638,7 +643,7 @@ function save({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     ...blockProps,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
-      className: `position-relative ${attributes.section_class}`,
+      className: `${attributes.section_class}`,
       style: `${attributes.section_style}`,
       id: attributes.section_id,
       children: [attributes.section_image && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
@@ -787,7 +792,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/content-features","version":"0.1.0","title":"Content Features","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"section_style":{"type":"string","default":""},"section_class":{"type":"string","default":""},"section_id":{"type":"string","default":""},"section_image":{"type":"string","default":null},"section_image_class":{"type":"string"},"section_image_style":{"type":"string"},"section_block":{"type":"string","default":""},"container_style":{"type":"string","default":""},"container_class":{"type":"string","default":"container"},"container_id":{"type":"string","default":""},"row_style":{"type":"string","default":""},"row_class":{"type":"string","default":"row justify-content-center"},"row_id":{"type":"string","default":""},"features":{"type":"array","items":{"type":"object"},"default":[{"col_class":"","col_style":"","col_id":"","data_aos":"","data_aos_delay":"","name":"","content":""}]}},"textdomain":"content-features","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/content-features","version":"0.1.0","title":"Content Features","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"section_style":{"type":"string","default":""},"section_class":{"type":"string","default":"position-relative"},"section_id":{"type":"string","default":""},"section_image":{"type":"string","default":null},"section_image_class":{"type":"string"},"section_image_style":{"type":"string"},"section_block":{"type":"string","default":""},"container_style":{"type":"string","default":""},"container_class":{"type":"string","default":"container-fluid"},"container_id":{"type":"string","default":""},"row_style":{"type":"string","default":""},"row_class":{"type":"string","default":"row justify-content-center"},"row_id":{"type":"string","default":""},"features":{"type":"array","items":{"type":"object"},"default":[{"col_class":"col-lg-4 col-md-6 col-12","col_style":"background:var(--accent-secondary);","col_id":"","col_inner_class":"d-flex align-items-center justify-content-md-center","data_aos":"fade-up","data_aos_delay":"","title":"","title_class":"bold","title_style":"","content":"","code_block":""}]}},"textdomain":"content-features","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

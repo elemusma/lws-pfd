@@ -7,6 +7,10 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+.row-checkmarks svg {
+  fill: var(--accent-primary-hover);
+}
+
 @media only screen and (min-width: 992px) {
   .row-checkmarks {
     -moz-column-count: 2;

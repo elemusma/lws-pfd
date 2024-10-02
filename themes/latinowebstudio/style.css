@@ -8,10 +8,24 @@ Version: 1.0
 
 */
 
+/* :root {
+    --primary: #0e112c;
+    --secondary: #6B818C;
+    --secondary: #6B818C;
+} */
+
 :root {
-    --primary: #f26522;
-    --secondary: #0f2849;
-}
+    --accent-primary-lighter: #5AB6F9;
+    --accent-primary: #3E78B2;
+    /* --accent-primary: #F9DC5C; */
+    --accent-primary-darker: #0E7AC6;
+    --accent-primary-hover: #066DB2;
+    --accent-secondary: #0e112c;
+    --accent-secondary-hover: #CA8E02;
+    --light: #f7f7f7;
+    --light-secondary: #e8edec;
+    --text-shadow: 1px 1px 3px black;
+  }
 
 .logged-in header.position-fixed {
     margin-top: 32px;

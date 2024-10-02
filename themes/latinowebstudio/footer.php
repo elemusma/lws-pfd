@@ -3,14 +3,20 @@
 echo get_template_part('lead-magnet/lead-magnet');
 
 echo '<footer>';
-echo '<section class="bg-accent-secondary" style="padding-top:50px;padding-bottom:25px;">';
+echo '<section class="bg-accent-secondary position-relative" style="padding-top:50px;padding-bottom:25px;">';
+
+echo wp_get_attachment_image(9,'full','',array(
+    'class'=>'w-100 h-100 position-absolute',
+    'style'=>'top:0;left:0;object-fit:cover;mix-blend-mode:color-burn;'
+));
+
 echo '<div class="container">';
 echo '<div class="row justify-content-center">';
 
 echo '<div class="col-lg-9 text-center" style="">';
-echo do_shortcode('[button href="tel:+1' . globalPhone() . '" class="white" title="phone number link for Mark McFarland, P.E. - Expert Witness & Forensic Engineering"]Speak with an Expert[/button]');
-echo do_shortcode('[button href="/wp-content/uploads/2024/04/Mark-McFarland-CV-Not-Retained.pdf" target="_blank" class="white"]CV Download[/button]');
-echo do_shortcode('[button href="/contact/" class="white"]Contact Now[/button]');
+echo do_shortcode('[button href="tel:+1' . globalPhone() . '" class="" title="phone number link for ' . get_bloginfo('name') . ' specializing in ' . get_bloginfo('description') . '"]Speak with an Expert[/button]');
+echo do_shortcode('[button href="/wp-content/uploads/2024/04/Mark-McFarland-CV-Not-Retained.pdf" target="_blank" class=""]CV Download[/button]');
+echo do_shortcode('[button href="/contact/" class=""]Contact Now[/button]');
 echo '</div>';
 echo '</div>';
 echo '</div>';
@@ -21,10 +27,14 @@ echo '<div class="container">';
 echo '<div class="row">';
 
 echo '<div class="col-lg-5 col-md-6 text-white">';
-echo '<a href="' . home_url() . '" title="Homepage link for Mark McFarland, P.E. - Expert Witness & Forensic Engineering">';
-echo '<div style="width:205px;fill:white;">';
+echo '<a href="' . home_url() . '" title="Homepage link for ' . get_bloginfo('name') . ' specializing in ' . get_bloginfo('description') . '" class="logo-footer">';
+
+echo '<div class="white" id="logoMain" style="width:50%;transition:all .75s ease-in-out;background:white;width:125px;height:125px;border-radius:50%;padding:5px;background:url(/wp-content/uploads/2024/10/Bg-Texture-02.jpg);background-size:cover;">';
+echo '<div style="pointer-events:none;">';
 echo logoSVG();
 echo '</div>';
+echo '</div>';
+
 echo '</a>';
 
 echo '<p class="">' . companyAbout() . '</p>';

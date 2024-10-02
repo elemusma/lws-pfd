@@ -79,11 +79,18 @@ function Edit({
     col_style,
     col_class,
     col_id,
-    checkmarks
+    col_content,
+    checkmarks_style,
+    checkmarks_class,
+    checkmarks_id,
+    checkmarks,
+    col_bottom_style,
+    col_bottom_class,
+    col_bottom_id,
+    col_bottom_content
   } = attributes;
   const [value, setValue] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)('');
-  const checkmarkIcon = `const checkmark = '
-<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1170.21 1145.48">
+  const checkmarkIcon = `<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1170.21 1145.48">
   <defs>
     <style>
       .cls-1 {
@@ -97,7 +104,7 @@ function Edit({
       <path class="cls-1" d="M75.64,533.32c30.18.6,57.09,7.34,83.63,15.82,48.96,15.65,95.74,36.58,141.81,59.13,26.01,12.73,51.73,26.07,77.49,39.31,3.19,1.64,4.98,1.67,7.51-1.26,36.59-42.31,72.96-84.82,110.12-126.62,33.07-37.21,66.82-73.81,100.66-110.31,55.72-60.08,112.95-118.71,171.89-175.63,56.07-54.15,113.52-106.78,175.68-154,30.79-23.4,62.49-45.46,97.6-62.06C1063.72,7.44,1086.12-.47,1110.55.02c13.35.27,25.99,3.6,37.47,10.72,19.8,12.26,27.1,33.62,18.85,55.42-5.06,13.36-13.75,24.39-23.53,34.41-18.37,18.82-37.31,37.09-55.91,55.68-41.21,41.2-83.04,81.8-123.36,123.85-55.12,57.5-105.64,119.01-153.58,182.62-85.27,113.15-159.78,233.08-225.51,358.53-50.88,97.11-96.21,196.76-136.56,298.68-5.15,13.02-13.1,22.48-27.31,24.96-15.31,2.67-28.22-3.75-36.12-17.44-14.48-25.09-28.7-50.33-43.35-75.31-45.67-77.88-93.52-154.34-147.95-226.51-47.85-63.45-101.14-121.96-159.28-176.1-6.58-6.13-12.82-12.68-19.8-18.3-13.8-11.1-16.5-25.52-13.52-41.78,5.67-30.98,28.25-51.51,60.21-54.93,5.45-.58,10.93-.91,14.35-1.19Z"/>
     </g>
   </g>
-</svg>'`;
+</svg>`;
   const addCheckmark = () => {
     setAttributes({
       checkmarks: [...checkmarks, {
@@ -262,7 +269,7 @@ function Edit({
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Checkmark Settings'),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Col Top Setting'),
         initialOpen: false,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalInputControl, {
           label: "Col Style",
@@ -282,9 +289,53 @@ function Edit({
           onChange: nextValue => setAttributes({
             col_id: nextValue
           })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Checkmark Settings'),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalInputControl, {
+          label: "Checkmarks Style",
+          value: checkmarks_style,
+          onChange: nextValue => setAttributes({
+            checkmarks_style: nextValue
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalInputControl, {
+          label: "Checkmarks Class",
+          value: checkmarks_class,
+          onChange: nextValue => setAttributes({
+            checkmarks_class: nextValue
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalInputControl, {
+          label: "Checkmarks ID",
+          value: checkmarks_id,
+          onChange: nextValue => setAttributes({
+            checkmarks_id: nextValue
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
           onClick: () => addCheckmark(),
           children: "Add New Checkmark"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Col Bottom Settings'),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalInputControl, {
+          label: "Col Style",
+          value: col_bottom_style,
+          onChange: nextValue => setAttributes({
+            col_bottom_style: nextValue
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalInputControl, {
+          label: "Col Class",
+          value: col_bottom_class,
+          onChange: nextValue => setAttributes({
+            col_bottom_class: nextValue
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalInputControl, {
+          label: "Col ID",
+          value: col_bottom_id,
+          onChange: nextValue => setAttributes({
+            col_bottom_id: nextValue
+          })
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("section", {
@@ -292,9 +343,22 @@ function Edit({
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
         src: section_image,
         alt: ""
-      }), console.log(section_image), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), console.log(section_image), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+        children: "Col Top Content"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
+        id: "colTopContent",
+        value: col_content,
+        onChange: event => setAttributes({
+          col_content: event.target.value
+        }),
+        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('here goes text'),
+        style: {
+          width: '100%',
+          height: '100px'
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "column-wrapper",
-        children: checkmarks.map((checkmark, index) => {
+        children: [checkmarks.map((checkmark, index) => {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: `column ${checkmark.col_class}`,
             style: {
@@ -490,7 +554,20 @@ function Edit({
               children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Checkmark')
             })]
           });
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+          children: "Col Bottom Content"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
+          id: "colBottomContent",
+          value: col_bottom_content,
+          onChange: event => setAttributes({
+            col_bottom_content: event.target.value
+          }),
+          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('here goes text'),
+          style: {
+            width: '100%',
+            height: '100px'
+          }
+        })]
       })]
     })]
   });
@@ -609,14 +686,21 @@ function save({
         className: attributes.container_class,
         style: attributes.container_style,
         id: attributes.container_id,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: attributes.row_class,
           style: attributes.row_style,
           id: attributes.row_id,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: `${attributes.col_class}`,
             style: attributes.col_style,
             id: attributes.col_id,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.RawHTML, {
+              children: attributes.col_content
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: `${attributes.checkmarks_class}`,
+            style: attributes.checkmarks_style,
+            id: attributes.checkmarks_id,
             children: attributes.checkmarks.map((checkmark, index) => {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
                 className: `position-relative text-center ${checkmark.col_class}`,
@@ -632,11 +716,10 @@ function save({
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
                     className: `d-flex align-items-center justify-content-center`,
                     style: {
-                      minWidth: '10px',
-                      height: '10px',
-                      background: 'var(--accent-primary)',
+                      height: '20px',
+                      width: '27px',
                       borderRadius: '50%',
-                      padding: '7px'
+                      paddingTop: '5px'
                     },
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.RawHTML, {
                       children: checkmark.content
@@ -654,7 +737,14 @@ function save({
                 })
               });
             })
-          })
+          }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: `${attributes.col_bottom_class}`,
+            style: attributes.col_bottom_style,
+            id: attributes.col_bottom_id,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.RawHTML, {
+              children: attributes.col_bottom_content
+            })
+          })]
         })
       })]
     })
@@ -753,7 +843,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/content-checkmarks","version":"0.1.0","title":"Content Checkmarks","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"section_style":{"type":"string","default":""},"section_class":{"type":"string","default":""},"section_id":{"type":"string","default":""},"section_image":{"type":"string","default":null},"section_image_class":{"type":"string"},"section_image_style":{"type":"string"},"section_block":{"type":"string","default":""},"container_style":{"type":"string","default":""},"container_class":{"type":"string","default":"container"},"container_id":{"type":"string","default":""},"row_style":{"type":"string","default":""},"row_class":{"type":"string","default":"row justify-content-center"},"row_id":{"type":"string","default":""},"col_style":{"type":"string","default":""},"col_class":{"type":"string","default":"col-md-9"},"col_id":{"type":"string","default":""},"checkmarks":{"type":"array","items":{"type":"object"},"default":[{"col_class":"","col_style":"","col_id":"","data_aos":"","data_aos_delay":"","name":""}]}},"textdomain":"content-checkmarks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/content-checkmarks","version":"0.1.0","title":"Content Checkmarks","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"section_style":{"type":"string","default":"padding:100px 0px;"},"section_class":{"type":"string","default":""},"section_id":{"type":"string","default":""},"section_image":{"type":"string","default":null},"section_image_class":{"type":"string"},"section_image_style":{"type":"string"},"section_block":{"type":"string","default":""},"container_style":{"type":"string","default":""},"container_class":{"type":"string","default":"container"},"container_id":{"type":"string","default":""},"row_style":{"type":"string","default":""},"row_class":{"type":"string","default":"row justify-content-center"},"row_id":{"type":"string","default":""},"col_style":{"type":"string","default":""},"col_class":{"type":"string","default":"col-md-10 text-center"},"col_id":{"type":"string","default":""},"col_content":{"type":"string","default":""},"checkmarks_style":{"type":"string","default":""},"checkmarks_class":{"type":"string","default":"col-md-10 row-checkmarks"},"checkmarks_id":{"type":"string","default":""},"checkmarks":{"type":"array","items":{"type":"object"},"default":[{"col_class":"","col_style":"","col_id":"","data_aos":"","data_aos_delay":"","content":"","name":""}]},"col_bottom_style":{"type":"string","default":""},"col_bottom_class":{"type":"string","default":"col-md-10 text-center"},"col_bottom_id":{"type":"string","default":""},"col_bottom_content":{"type":"string","default":""}},"textdomain":"content-checkmarks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 
