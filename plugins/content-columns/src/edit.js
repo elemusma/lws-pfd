@@ -150,7 +150,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					title={ __( 'Background Image' ) }
 					initialOpen={ false }
 				>
-					<MediaUploadCheck>
+<MediaUploadCheck>
   <MediaUpload
     onSelect={(media) => setAttributes({ section_image: media.url, section_image_alt: media.alt })}
     type="image"
@@ -563,16 +563,16 @@ style={{border:'1px solid'}}
 onClick={() => {
 const newColumns = [...columns]; // Create a copy of the columns array
 const newColumn = { // Define a new column object
-col_class: 'col-lg-4 col-md-6 text-center',
-col_style: '',
-col_id: '',
-data_aos: 'fade-up',
-data_aos_delay: '',
-img: '',
-img_class:'',
-img_style:'',
-title: 'new column',
-content: 'new column content',
+	col_class: 'col-lg-4 col-md-6 text-center',
+	col_style: '',
+	col_id: '',
+	data_aos: 'fade-up',
+	data_aos_delay: '',
+	img: '',
+	img_class: 'w-100',
+	img_style: 'height:100px;object-fit:contain;',
+	title: 'new column',
+	content: 'new column content',
 };
 newColumns.splice(index, 0, newColumn); // Insert the new column at the current index
 setAttributes({ columns: newColumns }); // Update the columns attribute with the new array
@@ -588,9 +588,11 @@ const newColumn = { // Define a new column object
 col_class: 'col-lg-4 col-md-6 text-center',
 col_style: '',
 col_id: '',
-data_aos: '',
+data_aos: 'fade-up',
 data_aos_delay: '',
 img: '',
+img_class: 'w-100',
+img_style: 'height:100px;object-fit:contain;',
 title: 'new column',
 content: 'new column content',
 };

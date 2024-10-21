@@ -1,6 +1,6 @@
 .btn-main, .btn-main a {
     background: var(--accent-primary-lighter);
-    padding: 15px 35px;
+    padding: 15px;
     transition: all .25s ease-in-out;
     display: inline-block;
     text-decoration: none;

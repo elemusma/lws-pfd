@@ -84,9 +84,9 @@ echo '</div>';
 echo '</a>';
 echo '</div>';
 
-echo '<div class="col-1 mobile-hidden"></div>';
+// echo '<div class="col-1 mobile-hidden"></div>';
 
-echo '<div class="col-lg-5 col-6 text-center mobile-hidden d-flex justify-content-end">';
+echo '<div class="col-lg-7 col-6 text-center mobile-hidden d-flex justify-content-end">';
 
 // echo '<a href="' . get_permalink(20) . '" class="text-white h-100 d-block d-flex align-items-center openModalBtn" data-modal-id="servicesMenuModal" style="padding:0px 10px;" title="Services Link">Services<br><svg style="width: 15px;
 // height: 15px;
@@ -138,7 +138,7 @@ echo '</div>';
 // echo '</a>';
 // echo '</div>';
 
-echo '<div class="col-lg-3 col-md-8 justify-content-end col-6 text-white d-md-flex align-items-center">';
+echo '<div class="col-lg-2 col-md-8 justify-content-end col-6 text-white d-md-flex align-items-center">';
 
 // echo '<small>Call Now</small><br>';
 

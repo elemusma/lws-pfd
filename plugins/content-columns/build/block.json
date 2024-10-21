@@ -73,10 +73,13 @@
       },
       "default": [
         {
-          "col_class": "",
+          "col_class": "col-lg-4 col-md-6 col-12 text-center",
           "col_style": "",
           "col_id": "",
+          "data_aos": "fade-up",
           "img": "",
+          "img_class": "w-100",
+          "img_style": "height:100px;object-fit:contain;",
           "title": "Column",
           "content": "This is the column content."
         }
