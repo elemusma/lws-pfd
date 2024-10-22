@@ -285,7 +285,6 @@ export default function Edit( { attributes, setAttributes } ) {
 							<div
 								className={ `column ${ column.col_class }` }
 								style={ {
-									background: '#f7f7f7',
 									padding: '25px',
 									borderBottom: '1px solid',
 									marginBottom: '25px',
@@ -559,63 +558,84 @@ export default function Edit( { attributes, setAttributes } ) {
 								{/* <p>{ column.content }</p> */}
 
 <Button
-style={{border:'1px solid'}}
-onClick={() => {
-const newColumns = [...columns]; // Create a copy of the columns array
-const newColumn = { // Define a new column object
-	col_class: 'col-lg-4 col-md-6 text-center',
-	col_style: '',
-	col_id: '',
-	data_aos: 'fade-up',
-	data_aos_delay: '',
-	img: '',
-	img_class: 'w-100',
-	img_style: 'height:100px;object-fit:contain;',
-	title: 'new column',
-	content: 'new column content',
-};
-newColumns.splice(index, 0, newColumn); // Insert the new column at the current index
-setAttributes({ columns: newColumns }); // Update the columns attribute with the new array
-}}
+    style={{
+		border:'1px solid',
+		background:'white'
+	}}
+	className={`button-hero`}
+    onClick={() => {
+        const newColumns = [...columns]; // Create a copy of the columns array
+        const newColumn = { // Define a new column object
+            col_class: 'col-lg-3 col-md-4 col-6',
+            col_style: '',
+            col_id: '',
+			data_aos: 'fade-up',
+			data_aos_delay: '',
+			img: '',
+			alt:'',
+			img_style:'',
+			img_class:'',
+			title: '',
+			content: '',
+			code_block: ''
+        };
+        newColumns.splice(index, 0, newColumn); // Insert the new column at the current index
+        setAttributes({ columns: newColumns }); // Update the columns attribute with the new array
+    }}
 >
-{__('Add Column Above')}
+    {__('Add Column Above')}
 </Button>
 <Button
-style={{border:'1px solid'}}
-onClick={() => {
-const newColumns = [...columns]; // Create a copy of the columns array
-const newColumn = { // Define a new column object
-col_class: 'col-lg-4 col-md-6 text-center',
-col_style: '',
-col_id: '',
-data_aos: 'fade-up',
-data_aos_delay: '',
-img: '',
-img_class: 'w-100',
-img_style: 'height:100px;object-fit:contain;',
-title: 'new column',
-content: 'new column content',
-};
-newColumns.splice(index + 1, 0, newColumn); // Insert the new column at the current index
-setAttributes({ columns: newColumns }); // Update the columns attribute with the new array
-}}
+    style={{
+		border:'1px solid',
+		background:'white'
+	}}
+	className={`button-hero`}
+    onClick={() => {
+        const newColumns = [...columns]; // Create a copy of the columns array
+        const newColumn = { // Define a new column object
+            col_class: 'col-md-5 team text-center',
+			col_style: 'margin-bottom:50px;',
+			col_id: '',
+			inner_col_style: '',
+			inner_col_class: '',
+			data_aos: 'fade-up',
+			data_aos_delay:'',
+			img: '',
+			img_class: 'w-75',
+			img_style: 'z-index:1;position:relative;height:400px;object-fit:cover;border-radius:25px;',
+			title: '',
+			content: '',
+			code_block: ''
+        };
+        newColumns.splice(index + 1, 0, newColumn); // Insert the new column at the current index
+        setAttributes({ columns: newColumns }); // Update the columns attribute with the new array
+    }}
 >
-{__('Add Column Below')}
+    {__('Add Column Below')}
 </Button>
 {/* Duplicate Button */}
 <Button
-style={{ border: '1px solid', marginTop: '10px' }}
+style={{
+	border:'1px solid',
+	background:'white'
+}}
+className={`button-hero`}
 onClick={() => {
 const newColumns = [...columns];
-const duplicateColumn = { ...column }; // Copy the column object
-newColumns.splice(index + 1, 0, duplicateColumn); // Insert the copy after the current column
+const duplicateFeature = { ...column }; // Copy the tab object
+newColumns.splice(index + 1, 0, duplicateFeature); // Insert the copy after the current tab
 setAttributes({ columns: newColumns });
 }}
 >
 {__('Duplicate Column')}
 </Button>
 <Button
-style={{border:'1px solid'}}
+style={{
+	border:'1px solid',
+	background:'peachpuff'
+}}
+className={`button-hero`}
 isDestructive
 onClick={() => {
 const newColumns = [...columns];
@@ -624,6 +644,45 @@ setAttributes({ columns: newColumns });
 }}
 >
 {__('Remove Column')}
+</Button>
+{/* Move Up Button */}
+<Button
+style={{
+	border:'1px solid',
+	background:'white'
+}}
+className={`button-hero`}
+onClick={() => {
+	if (index === 0) return; // Prevent moving the first item up
+	const newColumns = [...columns];
+	const temp = newColumns[index - 1];
+	newColumns[index - 1] = newColumns[index];
+	newColumns[index] = temp;
+	setAttributes({ columns: newColumns });
+}}
+disabled={index === 0} // Disable if it's the first item
+>
+{__('Move Up')}
+</Button>
+
+{/* Move Down Button */}
+<Button
+style={{
+	border:'1px solid',
+	background:'white'
+}}
+className={`button-hero`}
+onClick={() => {
+	if (index === columns.length - 1) return; // Prevent moving the last item down
+	const newColumns = [...columns];
+	const temp = newColumns[index + 1];
+	newColumns[index + 1] = newColumns[index];
+	newColumns[index] = temp;
+	setAttributes({ columns: newColumns });
+}}
+disabled={index === columns.length - 1} // Disable if it's the last item
+>
+{__('Move Down')}
 </Button>
 							</div>
 						);

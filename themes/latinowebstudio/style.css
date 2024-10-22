@@ -25,6 +25,7 @@ Version: 1.0
     --light: #f7f7f7;
     --light-secondary: #e8edec;
     --text-shadow: 1px 1px 3px black;
+    --bg-texture: url('/wp-content/uploads/2024/10/Bg-Texture-02.jpg');
   }
 
 .logged-in header.position-fixed {
@@ -35,4 +36,8 @@ Version: 1.0
     .logged-in header.position-fixed {
         margin-top: 45px;
     }
+}
+
+.booking-header {
+    display: none;
 }

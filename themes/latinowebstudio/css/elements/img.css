@@ -65,6 +65,11 @@ img.img-si {
     padding-top:10px;
 }
 
+.bg-img-white {
+    object-fit:cover;
+    opacity: 0.2;
+    object-position:bottom;
+}
 /* image hover with favicon instead of plus sign */
 /* .img-hover:after {
     content: "";

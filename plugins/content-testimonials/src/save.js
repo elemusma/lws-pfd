@@ -22,8 +22,8 @@ export default function save( { attributes } ) {
 	return (
 		<div { ...blockProps }>
 			<section
-				className={ `position-relative ${ attributes.section_class }` }
-				style={ `padding:50px 0;${ attributes.section_style }` }
+				className={ `${ attributes.section_class }` }
+				style={ `${ attributes.section_style }` }
 				id={ attributes.section_id }
 			>
 				{/* <div className="column-wrapper"> */}
@@ -48,7 +48,19 @@ export default function save( { attributes } ) {
 						style={ attributes.row_style }
 						id={ attributes.row_id }
 					>
+					<div
+						className={ attributes.col_class }
+						style={ attributes.col_style }
+						id={ attributes.col_id }
+					>
+						<InnerBlocks.Content />
+					</div>
 
+					<div
+						className={ attributes.testimonial_class }
+						style={ attributes.testimonial_style }
+						id={ attributes.testimonial_id }
+					>
 {
   attributes.testimonials.map((testimonial, index) => {
     return (
@@ -76,7 +88,7 @@ export default function save( { attributes } ) {
     );
   })
 }
-
+</div> {/** end of testimonial */}
 
 
 				</div>

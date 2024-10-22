@@ -445,11 +445,11 @@ CSF::createSection( $prefix, array(
       ),
 	  
 	  // A textarea field
-      array(
-        'id'    => 'expert-witness-blurb',
-        'type'  => 'textarea',
-        'title' => 'Expert Witness And Analytic Services',
-      ),
+    //   array(
+    //     'id'    => 'expert-witness-blurb',
+    //     'type'  => 'textarea',
+    //     'title' => 'Expert Witness And Analytic Services',
+    //   ),
 
 	  array(
 		'id'      => 'global-phone',
@@ -465,7 +465,31 @@ CSF::createSection( $prefix, array(
 		'default' => 'info@domain.com'
 	  ),
 	  
-	  
+	  // repeater field
+	  array(
+        'id'     => 'opt-repeater-1',
+        'type'   => 'repeater',
+        'title'  => 'Repeater',
+        'sanitize' => false,
+        'fields' => array(
+
+            array(
+            'id'    => 'opt-link-1',
+            'type'  => 'link',
+            'title' => 'Link',
+            ),
+            // Code Editor
+        array(
+            'id'    => 'svg-social-logos',
+            'type'  => 'code_editor',
+            'title' => 'SVG Social Logos',
+            'sanitize' => false,
+        ),
+            
+        
+        ),
+        ),
+        // end of repeater field
 
 	)
 ) );

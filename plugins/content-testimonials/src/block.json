@@ -14,11 +14,11 @@
 	"attributes": {
 		"section_style": {
 			"type": "string",
-			"default": ""
+			"default": "padding:50px 0px;"
 		},
 		"section_class": {
 			"type": "string",
-			"default": ""
+			"default": "position-relative"
 		},
 		"section_id": {
 			"type": "string",
@@ -56,9 +56,33 @@
 		},
 		"row_class": {
 			"type": "string",
-			"default": "row justify-content-center testimonial-carousel owl-carousel owl-theme"
+			"default": "row justify-content-center"
 		},
 		"row_id": {
+			"type": "string",
+			"default": ""
+		},
+		"col_style": {
+			"type": "string",
+			"default": "padding-bottom:50px;"
+		},
+		"col_class": {
+			"type": "string",
+			"default": "col-lg-9 text-center"
+		},
+		"col_id": {
+			"type": "string",
+			"default": ""
+		},
+		"testimonial_style": {
+			"type": "string",
+			"default": ""
+		},
+		"testimonial_class": {
+			"type": "string",
+			"default": "testimonial-carousel owl-carousel owl-theme"
+		},
+		"testimonial_id": {
 			"type": "string",
 			"default": ""
 		},

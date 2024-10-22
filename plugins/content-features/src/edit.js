@@ -70,8 +70,8 @@ export default function Edit( { attributes, setAttributes } ) {
 			features: [
 				...features,
 				{
-					col_class: 'col-lg-4 col-md-6 col-12',
-					col_style: 'background:var(--accent-primary-lighter);',
+					col_class: '',
+					col_style: '',
 					col_id: '',
 					col_inner_class: 'd-flex align-items-center justify-content-md-center',
 					col_inner_style: '',
@@ -260,7 +260,6 @@ export default function Edit( { attributes, setAttributes } ) {
         <div
             className={`column ${feature.col_class}`}
             style={{
-                background: '#f7f7f7',
                 padding: '25px',
                 borderBottom: '1px solid',
                 marginBottom: '25px',
@@ -423,55 +422,106 @@ export default function Edit( { attributes, setAttributes } ) {
                 </div>
             </div>
 
-            {/* Duplicate Button */}
-            <Button
-                style={{ border: '1px solid', marginTop: '10px' }}
-                onClick={() => {
-                    const newFeatures = [...features];
-                    const duplicateFeature = { ...feature }; // Copy the feature object
-                    newFeatures.splice(index + 1, 0, duplicateFeature); // Insert the copy after the current feature
-                    setAttributes({ features: newFeatures });
-                }}
-            >
-                {__('Duplicate Feature')}
-            </Button>
+			<Button
+    style={{
+		border:'1px solid',
+		background:'white'
+	}}
+	className={`button-hero`}
+    onClick={() => {
+        const newFeatures = [...features]; // Create a copy of the features array
+        const newColumn = createNewColumn();
+        newFeatures.splice(index, 0, newColumn); // Insert the new column at the current index
+        setAttributes({ features: newFeatures }); // Update the features attribute with the new array
+    }}
+>
+    {__('Add Column Above')}
+</Button>
+<Button
+    style={{
+		border:'1px solid',
+		background:'white'
+	}}
+	className={`button-hero`}
+    onClick={() => {
+        const newFeatures = [...features]; // Create a copy of the features array
+        const newColumn = createNewColumn();
+        newFeatures.splice(index + 1, 0, newColumn); // Insert the new column at the current index
+        setAttributes({ features: newFeatures }); // Update the features attribute with the new array
+    }}
+>
+    {__('Add Column Below')}
+</Button>
+{/* Duplicate Button */}
+<Button
+style={{
+	border:'1px solid',
+	background:'white'
+}}
+className={`button-hero`}
+onClick={() => {
+const newFeatures = [...features];
+const duplicateFeature = { ...feature }; // Copy the tab object
+newFeatures.splice(index + 1, 0, duplicateFeature); // Insert the copy after the current tab
+setAttributes({ features: newFeatures });
+}}
+>
+{__('Duplicate Column')}
+</Button>
+<Button
+style={{
+	border:'1px solid',
+	background:'peachpuff'
+}}
+className={`button-hero`}
+isDestructive
+onClick={() => {
+const newFeatures = [...features];
+newFeatures.splice(index, 1);
+setAttributes({ features: newFeatures });
+}}
+>
+{__('Remove Column')}
+</Button>
+{/* Move Up Button */}
+<Button
+style={{
+	border:'1px solid',
+	background:'white'
+}}
+className={`button-hero`}
+onClick={() => {
+	if (index === 0) return; // Prevent moving the first item up
+	const newFeatures = [...features];
+	const temp = newFeatures[index - 1];
+	newFeatures[index - 1] = newFeatures[index];
+	newFeatures[index] = temp;
+	setAttributes({ features: newFeatures });
+}}
+disabled={index === 0} // Disable if it's the first item
+>
+{__('Move Up')}
+</Button>
 
-            <Button
-                style={{ border: '1px solid', marginTop: '10px' }}
-                onClick={() => {
-                    const newFeatures = [...features];
-                    const newColumn = {
-                        col_class: 'col-lg-4 col-md-6 col-12',
-					col_style: 'background:var(--accent-primary-lighter);',
-					col_id: '',
-					col_inner_class: 'd-flex align-items-center justify-content-md-center',
-					col_inner_style: '',
-					data_aos: 'fade-up',
-					data_aos_delay: '',
-					title: '',
-					title_class: 'bold',
-					title_style: '',
-					content: '',
-					code_block: ''
-                    };
-                    newFeatures.splice(index, 0, newColumn); // Insert the new column at the current index
-                    setAttributes({ features: newFeatures });
-                }}
-            >
-                {__('Add Feature Above')}
-            </Button>
-
-            <Button
-                style={{ border: '1px solid', marginTop: '10px' }}
-                isDestructive
-                onClick={() => {
-                    const newFeatures = [...features];
-                    newFeatures.splice(index, 1);
-                    setAttributes({ features: newFeatures });
-                }}
-            >
-                {__('Remove Feature')}
-            </Button>
+{/* Move Down Button */}
+<Button
+style={{
+	border:'1px solid',
+	background:'white'
+}}
+className={`button-hero`}
+onClick={() => {
+	if (index === features.length - 1) return; // Prevent moving the last item down
+	const newFeatures = [...features];
+	const temp = newFeatures[index + 1];
+	newFeatures[index + 1] = newFeatures[index];
+	newFeatures[index] = temp;
+	setAttributes({ features: newFeatures });
+}}
+disabled={index === features.length - 1} // Disable if it's the last item
+>
+{__('Move Down')}
+</Button>
         </div>
     );
 })}

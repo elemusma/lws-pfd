@@ -82,8 +82,8 @@ function Edit({
   const addFeature = () => {
     setAttributes({
       features: [...features, {
-        col_class: 'col-lg-4 col-md-6 col-12',
-        col_style: 'background:var(--accent-primary-lighter);',
+        col_class: '',
+        col_style: '',
         col_id: '',
         col_inner_class: 'd-flex align-items-center justify-content-md-center',
         col_inner_style: '',
@@ -259,7 +259,6 @@ function Edit({
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: `column ${feature.col_class}`,
             style: {
-              background: '#f7f7f7',
               padding: '25px',
               borderBottom: '1px solid',
               marginBottom: '25px'
@@ -482,51 +481,56 @@ function Edit({
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
               style: {
                 border: '1px solid',
-                marginTop: '10px'
+                background: 'white'
               },
+              className: `button-hero`,
+              onClick: () => {
+                const newFeatures = [...features]; // Create a copy of the features array
+                const newColumn = createNewColumn();
+                newFeatures.splice(index, 0, newColumn); // Insert the new column at the current index
+                setAttributes({
+                  features: newFeatures
+                }); // Update the features attribute with the new array
+              },
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Column Above')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+              style: {
+                border: '1px solid',
+                background: 'white'
+              },
+              className: `button-hero`,
+              onClick: () => {
+                const newFeatures = [...features]; // Create a copy of the features array
+                const newColumn = createNewColumn();
+                newFeatures.splice(index + 1, 0, newColumn); // Insert the new column at the current index
+                setAttributes({
+                  features: newFeatures
+                }); // Update the features attribute with the new array
+              },
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Column Below')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+              style: {
+                border: '1px solid',
+                background: 'white'
+              },
+              className: `button-hero`,
               onClick: () => {
                 const newFeatures = [...features];
                 const duplicateFeature = {
                   ...feature
-                }; // Copy the feature object
-                newFeatures.splice(index + 1, 0, duplicateFeature); // Insert the copy after the current feature
+                }; // Copy the tab object
+                newFeatures.splice(index + 1, 0, duplicateFeature); // Insert the copy after the current tab
                 setAttributes({
                   features: newFeatures
                 });
               },
-              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Duplicate Feature')
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Duplicate Column')
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
               style: {
                 border: '1px solid',
-                marginTop: '10px'
+                background: 'peachpuff'
               },
-              onClick: () => {
-                const newFeatures = [...features];
-                const newColumn = {
-                  col_class: 'col-lg-4 col-md-6 col-12',
-                  col_style: 'background:var(--accent-primary-lighter);',
-                  col_id: '',
-                  col_inner_class: 'd-flex align-items-center justify-content-md-center',
-                  col_inner_style: '',
-                  data_aos: 'fade-up',
-                  data_aos_delay: '',
-                  title: '',
-                  title_class: 'bold',
-                  title_style: '',
-                  content: '',
-                  code_block: ''
-                };
-                newFeatures.splice(index, 0, newColumn); // Insert the new column at the current index
-                setAttributes({
-                  features: newFeatures
-                });
-              },
-              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Feature Above')
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-              style: {
-                border: '1px solid',
-                marginTop: '10px'
-              },
+              className: `button-hero`,
               isDestructive: true,
               onClick: () => {
                 const newFeatures = [...features];
@@ -535,7 +539,45 @@ function Edit({
                   features: newFeatures
                 });
               },
-              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Feature')
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Column')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+              style: {
+                border: '1px solid',
+                background: 'white'
+              },
+              className: `button-hero`,
+              onClick: () => {
+                if (index === 0) return; // Prevent moving the first item up
+                const newFeatures = [...features];
+                const temp = newFeatures[index - 1];
+                newFeatures[index - 1] = newFeatures[index];
+                newFeatures[index] = temp;
+                setAttributes({
+                  features: newFeatures
+                });
+              },
+              disabled: index === 0 // Disable if it's the first item
+              ,
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Move Up')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+              style: {
+                border: '1px solid',
+                background: 'white'
+              },
+              className: `button-hero`,
+              onClick: () => {
+                if (index === features.length - 1) return; // Prevent moving the last item down
+                const newFeatures = [...features];
+                const temp = newFeatures[index + 1];
+                newFeatures[index + 1] = newFeatures[index];
+                newFeatures[index] = temp;
+                setAttributes({
+                  features: newFeatures
+                });
+              },
+              disabled: index === features.length - 1 // Disable if it's the last item
+              ,
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Move Down')
             })]
           });
         })

@@ -419,7 +419,7 @@ function ssa_get_language_attributes( $doctype = 'html' ) {
         <noscript>
           <div class="unsupported">
             <div class="unsupported-container">
-              <h1 class="unsupported-label">' . __('Simply Schedule Appointments requires JavaScript', 'simply-schedule-appointments') . '</h1>
+              <span class="unsupported-label">' . __('Simply Schedule Appointments requires JavaScript', 'simply-schedule-appointments') . '</span>
               <p class="unsupported-description">' . __('To book an appointment, please make sure you enable JavaScript in your browser.', 'simply-schedule-appointments') . '</p>
             </div>
           </div>
@@ -428,7 +428,7 @@ function ssa_get_language_attributes( $doctype = 'html' ) {
       <div id="ssa-unsupported" style="display:none;">
           <div class="unsupported">
             <div class="unsupported-container">
-              <h1 class="unsupported-label">' . __('Unsupported Browser', 'simply-schedule-appointments') . '</h1>
+              <span class="unsupported-label">' . __('Unsupported Browser', 'simply-schedule-appointments') . '</span>
               <p class="unsupported-description">' . __('To book an appointment, please update your browser to something more modern. We recommend Firefox or Chrome.', 'simply-schedule-appointments') . '</p>
             </div>
           </div>

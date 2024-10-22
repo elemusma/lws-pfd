@@ -73,7 +73,7 @@ echo '<div class="nav" style="padding-top:10px;padding-bottom:10px;">';
 echo '<div class="container">';
 echo '<div class="row justify-content-between">';
 
-echo '<div class="col-lg-2 col-md-4 col-6 text-center">';
+echo '<div class="col-lg-2 col-md-4 col-4 text-center">';
 
 echo '<a href="' . home_url() . '" title="Homepage link for ' . get_bloginfo('name') . ' specializing in ' . get_bloginfo('description') . '">';
 echo '<div class="white" id="logoMain" style="width:50%;transition:all .75s ease-in-out;background:white;width:75px;height:75px;border-radius:50%;padding:5px;background:url(/wp-content/uploads/2024/10/Bg-Texture-02.jpg);background-size:cover;">';
@@ -138,13 +138,13 @@ echo '</div>';
 // echo '</a>';
 // echo '</div>';
 
-echo '<div class="col-lg-2 col-md-8 justify-content-end col-6 text-white d-md-flex align-items-center">';
+echo '<div class="col-lg-2 col-8 justify-content-md-end justify-content-between text-white d-flex align-items-center">';
 
 // echo '<small>Call Now</small><br>';
 
 // echo '<div class="d-flex align-items-center justify-content-end">';
 
-echo do_shortcode('[button href="tel:+1' . globalPhone() . '" title="phone number link for ' . get_bloginfo('name') . ' specializing in ' . get_bloginfo('description') . '" style="font-size:12px;" class=""]Book a Session[/button]');
+echo do_shortcode('[button href="/schedule-session/" title="phone number link for ' . get_bloginfo('name') . ' specializing in ' . get_bloginfo('description') . '" style="font-size:12px;margin:0px;" class=""]Schedule a Session[/button]');
 
 // echo '<a href="tel:+1' . globalPhone() . '" class="text-white mobile-hidden" title="phone number for ' . get_bloginfo('name') . ' specializing in ' . get_bloginfo('description') . '" style="padding:10px 0px;">' . globalPhone() . '</a>';
 // echo '<div class="d-inline-block mobile-hidden" style="width:28px;height:28px;padding-left:10px;">';
@@ -175,7 +175,7 @@ echo do_shortcode('[button href="tel:+1' . globalPhone() . '" title="phone numbe
 // echo '</div>';
 
 
-echo '<div>';
+echo '<div style="margin-left:15px;" class="desktop-hidden">';
 echo '<a id="mobileMenuToggle" class="openModalBtn nav-toggle" data-modal-id="mobileMenu" title="mobile menu nav toggle for Mark McFarland, P.E. - Expert Witness & Forensic Engineering">';
 echo '<div style="padding:10px 0px;">';
 echo '<div class="line-1 bg-accent"></div>';

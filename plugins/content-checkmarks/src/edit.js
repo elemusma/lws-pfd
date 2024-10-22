@@ -373,7 +373,6 @@ export default function Edit( { attributes, setAttributes } ) {
         <div
             className={`column ${checkmark.col_class}`}
             style={{
-                background: '#f7f7f7',
                 padding: '25px',
                 borderBottom: '1px solid',
                 marginBottom: '25px',

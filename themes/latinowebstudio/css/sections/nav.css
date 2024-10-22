@@ -28,7 +28,13 @@ transform-origin:center;
 #logoMain svg {
     overflow: visible !important;
 }
+#logoMain:hover svg path {
+    fill: var(--accent-primary);
+}
 
+#logoMain svg path {
+    transition: all .25s ease-in-out;
+}
 @keyframes navAnimation {
     from {
         top:-100%;
@@ -121,7 +127,7 @@ ul.menu>li>a {
 
 @media only screen and (min-width:767px) {
     ul.menu>li>a {
-        padding:25px 9px;
+        padding:39px 9px;
     }
 }
 
@@ -183,7 +189,7 @@ ul.menu>li>a:hover,
 
     .nav-toggle div div {
         height: 5px;
-        width: 55px;
+        width: 35px;
         margin: 4px auto;
         margin-right:0;
         transition: all .75s ease-in-out;
@@ -246,10 +252,23 @@ ul.menu>li>a:hover,
         overflow: hidden;
         transition: all .5s ease-in-out;
         /* min-width: 100%; */
+        background: url('/wp-content/uploads/2024/10/Bg-Texture-02.jpg');
         min-width: 300px;
-        top: 58px;
+        top: 75px;
         transform-origin: top;
         box-shadow: 0px 0px 3px rgba(0,0,0,.5);
+    }
+    ul.sub-menu:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('/wp-content/uploads/2024/10/Bg-Texture-02.jpg') no-repeat center center;
+        background-size: cover;
+        opacity: 0.5;
+        z-index: -1;
     }
 }
 

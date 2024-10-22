@@ -362,7 +362,6 @@ function Edit({
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: `column ${checkmark.col_class}`,
             style: {
-              background: '#f7f7f7',
               padding: '25px',
               borderBottom: '1px solid',
               marginBottom: '25px'

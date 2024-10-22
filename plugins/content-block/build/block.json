@@ -14,7 +14,7 @@
   "attributes": {
     "section_style": {
       "type": "string",
-      "default": "padding:100px 0px"
+      "default": "padding:50px 0px;"
     },
     "section_class": {
       "type": "string",

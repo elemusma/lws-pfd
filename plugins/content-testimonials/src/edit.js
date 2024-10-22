@@ -60,29 +60,37 @@ export default function Edit( { attributes, setAttributes } ) {
 		row_style,
 		row_class,
 		row_id,
+		col_style,
+		col_class,
+		col_id,
+		testimonial_style,
+		testimonial_class,
+		testimonial_id,
 		testimonials,
 	} = attributes;
 
 	const [ value, setValue ] = useState( '' );
 
+	const utilityFunction = () => ({
+		col_class: '',
+		col_style: '',
+		col_id: '',
+		data_aos: 'fade-up',
+		data_aos_delay: '',
+		img: '',
+		alt:'',
+		img_style:'',
+		img_class:'',
+		title: '',
+		content: '',
+		code_block: ''
+	});
+
 	const addTestimonial = () => {
 		setAttributes( {
 			testimonials: [
 				...testimonials,
-				{
-					col_class: '',
-					col_style: '',
-					col_id: '',
-					data_aos: 'fade-up',
-					data_aos_delay: '',
-					img: '',
-					alt:'',
-					img_style:'',
-					img_class:'',
-					title: '',
-					content: '',
-					code_block: ''
-				},
+				utilityFunction(),
 			],
 		} );
 	};
@@ -266,11 +274,55 @@ export default function Edit( { attributes, setAttributes } ) {
 						}
 					/>
 				</PanelBody>
+				<PanelBody title={ __( 'Column' ) } initialOpen={ false }>
+					<InputControl
+						label="Column Style"
+						value={ col_style }
+						onChange={ ( nextValue ) =>
+							setAttributes( { col_style: nextValue } )
+						}
+					/>
+					<InputControl
+						label="Column Class"
+						value={ col_class }
+						onChange={ ( nextValue ) =>
+							setAttributes( { col_class: nextValue } )
+						}
+					/>
+					<InputControl
+						label="Column ID"
+						value={ col_id }
+						onChange={ ( nextValue ) =>
+							setAttributes( { col_id: nextValue } )
+						}
+					/>
+				</PanelBody>
 				
 				<PanelBody
 					title={ __( 'Testimonial Settings' ) }
 					initialOpen={ false }
 				>
+					<InputControl
+						label="Testimonial Style"
+						value={ testimonial_style }
+						onChange={ ( nextValue ) =>
+							setAttributes( { testimonial_style: nextValue } )
+						}
+					/>
+					<InputControl
+						label="Testimonial Class"
+						value={ testimonial_class }
+						onChange={ ( nextValue ) =>
+							setAttributes( { testimonial_class: nextValue } )
+						}
+					/>
+					<InputControl
+						label="Testimonial ID"
+						value={ testimonial_id }
+						onChange={ ( nextValue ) =>
+							setAttributes( { testimonial_id: nextValue } )
+						}
+					/>
 					<button onClick={ () => addTestimonial() }>
 						Add New Testimonial
 					</button>
@@ -280,12 +332,14 @@ export default function Edit( { attributes, setAttributes } ) {
 				<img src={ section_image } alt="" />
 				{ console.log( section_image ) }
 				<div className="column-wrapper">
+
+				<InnerBlocks />
+
 					{ testimonials.map( ( testimonial, index ) => {
 						return (
 							<div
 								className={ `column ${ testimonial.col_class }` }
 								style={ {
-									background: '#f7f7f7',
 									padding: '25px',
 									borderBottom: '1px solid',
 									marginBottom: '25px',
@@ -503,20 +557,7 @@ export default function Edit( { attributes, setAttributes } ) {
     style={{border:'1px solid'}}
     onClick={() => {
         const newTestimonials = [...testimonials]; // Create a copy of the columns array
-        const newColumn = { // Define a new column object
-            col_class: '',
-            col_style: '',
-            col_id: '',
-			data_aos: 'fade-up',
-			data_aos_delay: '',
-			img: '',
-			alt:'',
-			img_style:'',
-			img_class:'',
-			title: '',
-			content: '',
-			code_block: ''
-        };
+        const newColumn = utilityFunction();
         newTestimonials.splice(index, 0, newColumn); // Insert the new column at the current index
         setAttributes({ testimonials: newTestimonials }); // Update the columns attribute with the new array
     }}
@@ -527,20 +568,7 @@ export default function Edit( { attributes, setAttributes } ) {
     style={{border:'1px solid'}}
     onClick={() => {
         const newTestimonials = [...testimonials]; // Create a copy of the columns array
-        const newColumn = { // Define a new column object
-            col_class: '',
-            col_style: '',
-            col_id: '',
-			data_aos: 'fade-up',
-			data_aos_delay: '',
-			img: '',
-			alt:'',
-			img_style:'',
-			img_class:'',
-			title: '',
-			content: '',
-			code_block: ''
-        };
+        const newColumn = utilityFunction();
         newTestimonials.splice(index + 1, 0, newColumn); // Insert the new column at the current index
         setAttributes({ testimonials: newTestimonials }); // Update the columns attribute with the new array
     }}
@@ -557,7 +585,7 @@ newTestimonials.splice(index + 1, 0, duplicateFeature); // Insert the copy after
 setAttributes({ testimonials: newTestimonials });
 }}
 >
-{__('Duplicate Feature')}
+{__('Duplicate Testimonial')}
 </Button>
 <Button
 style={{border:'1px solid'}}
