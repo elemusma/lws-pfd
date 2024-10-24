@@ -181,7 +181,7 @@ export default function Edit({ attributes, setAttributes }) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<section {...useBlockProps()}>
+			<section {...useBlockProps()} style={{position:'relative', overflow:'hidden'}}>
 			{section_image && (
 				<img src={section_image} alt={section_image_alt || 'Electrical Engineering Expert Witness'} />
 			)}

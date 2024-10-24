@@ -31,12 +31,20 @@
     background: white;
     color: black!important;
     border:1px solid white;
+    background-image: url('/wp-content/uploads/2024/10/Bg-Texture-02.jpg');
+    background-size:cover;
+    background-blend-mode: multiply;
+    transition:all .25s ease-in-out;
 }
 
 .btn-main.white:hover {
-    background: #f7f7f7;
-    border-color:#f7f7f7;
+    background: var(--accent-secondary);
+    border-color:var(--accent-secondary);
     text-decoration: none;
+    color:white!important;
+    background-image: url('/wp-content/uploads/2024/10/Bg-Texture-02.jpg');
+    background-size:cover;
+    background-blend-mode: color-burn!important;
 }
 
 .btn-main.outline {

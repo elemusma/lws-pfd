@@ -37,6 +37,9 @@ a.bg-accent:hover {
 .bg-accent-secondary {
   background: var(--accent-secondary);
 }
+.bg-accent-lighter {
+  background: var(--accent-primary-lighter);
+}
 
 a.bg-accent-secondary:hover {
   background: var(--accent-primary);
