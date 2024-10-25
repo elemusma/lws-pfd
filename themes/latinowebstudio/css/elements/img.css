@@ -67,7 +67,7 @@ img.img-si {
 
 .bg-img-white {
     object-fit:cover;
-    opacity: 0.2;
+    opacity: 0.1;
     object-position:bottom;
 }
 /* image hover with favicon instead of plus sign */

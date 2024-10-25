@@ -14,11 +14,11 @@
   "attributes": {
     "section_style": {
       "type": "string",
-      "default": ""
+      "default": "padding:50px 0px;"
     },
     "section_class": {
       "type": "string",
-      "default": ""
+      "default": "position-relative"
     },
     "section_id": {
       "type": "string",

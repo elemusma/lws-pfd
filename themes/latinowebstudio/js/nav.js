@@ -154,7 +154,7 @@ function clickMobile() {
         if (!subMenuMobile.classList.contains('active-sub-menu')) {
             // alert('clicked to activate');
             subMenuMobile.classList.add('active-sub-menu');
-            subMenuMobile.style.height = subMenuMobile.children[0].offsetHeight * subMenuMobile.children.length + 'px';
+            subMenuMobile.style.height = ((subMenuMobile.children[0].offsetHeight * subMenuMobile.children.length) + 20) + 'px';
         } else if (subMenuMobile.classList.contains('active-sub-menu')) {
             // alert('clicked to deactivate');
             subMenuMobile.classList.remove('active-sub-menu');
@@ -169,7 +169,7 @@ function activeDropdown() {
     subMenu = this.querySelector('.sub-menu');
     if (!subMenu.classList.contains('active-sub-menu')) {
         subMenu.classList.add('active-sub-menu');
-        subMenu.style.height = subMenu.children[0].offsetHeight * subMenu.children.length + 'px';
+        subMenu.style.height = ((subMenu.children[0].offsetHeight * subMenu.children.length)+20) + 'px';
     }
 }
 function inActiveDropdown() {

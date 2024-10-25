@@ -22,6 +22,14 @@
   color: var(--accent-secondary);
   box-shadow: var(--box-shadow);
 }
+@media only screen and (max-width: 991px) {
+  .wp-block-create-block-content-cards-image .core-values .circle {
+    min-width: 50px;
+    height: 45px;
+    padding-top: 5px;
+    font-size: 1.5rem;
+  }
+}
 .wp-block-create-block-content-cards-image .core-values h3 {
   color: white;
 }

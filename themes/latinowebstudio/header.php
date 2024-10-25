@@ -73,7 +73,7 @@ echo '<div class="nav" style="padding-top:10px;padding-bottom:10px;">';
 echo '<div class="container">';
 echo '<div class="row justify-content-between">';
 
-echo '<div class="col-lg-2 col-md-4 col-4 text-center">';
+echo '<div class="col-lg-1 col-md-4 col-4 text-center">';
 
 echo '<a href="' . home_url() . '" title="Homepage link for ' . get_bloginfo('name') . ' specializing in ' . get_bloginfo('description') . '">';
 echo '<div class="white" id="logoMain" style="width:50%;transition:all .75s ease-in-out;background:white;width:75px;height:75px;border-radius:50%;padding:5px;background:url(/wp-content/uploads/2024/10/Bg-Texture-02.jpg);background-size:cover;">';
@@ -86,7 +86,7 @@ echo '</div>';
 
 // echo '<div class="col-1 mobile-hidden"></div>';
 
-echo '<div class="col-lg-7 col-6 text-center mobile-hidden d-flex justify-content-end">';
+echo '<div class="col-lg-9 col-6 text-center mobile-hidden d-flex justify-content-end">';
 
 // echo '<a href="' . get_permalink(20) . '" class="text-white h-100 d-block d-flex align-items-center openModalBtn" data-modal-id="servicesMenuModal" style="padding:0px 10px;" title="Services Link">Services<br><svg style="width: 15px;
 // height: 15px;
@@ -138,7 +138,7 @@ echo '</div>';
 // echo '</a>';
 // echo '</div>';
 
-echo '<div class="col-lg-2 col-8 justify-content-md-end justify-content-between text-white d-flex align-items-center">';
+echo '<div class="col-lg-2 col-8 justify-content-end text-white d-flex align-items-center">';
 
 // echo '<small>Call Now</small><br>';
 

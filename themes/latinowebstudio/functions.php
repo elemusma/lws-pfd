@@ -695,3 +695,26 @@ add_filter('excerpt_more', 'new_excerpt_more');
 // }
 	
 // add_action('get_footer', 'load_in_footer');
+
+function custom_bg_image_shortcode( $atts ) {
+    // Set default values for the attributes
+    $atts = shortcode_atts( array(
+        'img_src' => '/wp-content/uploads/2024/10/Bg-Texture-02.jpg',
+        'class' => 'position-absolute w-100 h-100',
+        'style' => 'top:0;left:0;z-index:2;object-fit:cover;mix-blend-mode:color-burn;pointer-events:none;',
+        'container_class' => 'position-absolute h-100 bg-accent-secondary',
+        'container_style' => 'top:0;right:0;width:15vw;z-index:1;',
+    ), $atts );
+
+    ob_start();
+    ?>
+    <img src="<?php echo esc_url( $atts['img_src'] ); ?>" style="<?php echo esc_attr( $atts['style'] ); ?>" class="<?php echo esc_attr( $atts['class'] ); ?>" />
+
+    <div class="<?php echo esc_attr( $atts['container_class'] ); ?>" style="<?php echo esc_attr( $atts['container_style'] ); ?>">
+        <img src="<?php echo esc_url( $atts['img_src'] ); ?>" style="<?php echo esc_attr( $atts['style'] ); ?>" class="<?php echo esc_attr( $atts['class'] ); ?>" />
+    </div>
+    <?php
+    return ob_get_clean();
+}
+
+add_shortcode( 'custom_bg_image', 'custom_bg_image_shortcode' );
