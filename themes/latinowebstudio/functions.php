@@ -1,5 +1,21 @@
 <?php
 
+add_action('wp_head','google_analytics');
+
+function google_analytics() {
+	?>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HYQZY6WEQ4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HYQZY6WEQ4');
+</script>
+<?php
+}
+
 function prodigy_futbol_development_stylesheets() {
 wp_enqueue_style('style', get_stylesheet_uri() );
 

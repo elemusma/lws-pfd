@@ -33,6 +33,45 @@ input[type=file] {
   box-shadow: none;
   border: none;
 }
+/* Hide the default radio button */
+.gfield_radio input[type="radio"] {
+  display: none!important;
+}
+
+/* Style the custom radio button */
+.gfield_radio label:before {
+  content: "";
+  cursor:pointer;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ccc; /* Default border color */
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Change color when radio is checked */
+.gfield_radio input[type="radio"]:checked + label:before {
+  background-color: var(--accent-primary); /* Checked color */
+  border-color: var(--accent-primary);     /* Border color for checked state */
+}
+
+/* Label text color when checked */
+.gfield_radio input[type="radio"]:checked + label {
+  color: var(--accent-primary); /* Text color when selected */
+}
+/* .gfield_radio .gchoice {
+  display: flex;
+  align-items: baseline;
+}
+ */
+ label.gform-field-label {
+  /* box-shadow: none !important;
+  width: 15px; */
+  margin-top:0px;
+}
 
 /* custom form */
 input,
